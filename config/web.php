@@ -16,6 +16,26 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'epM5wzy9pDs0MVVhyQvtuCn3KNVPUKHy',
         ],
+            'i18n' => [
+        'translations' => [
+            'app*' => [
+                'class' => 'yii\i18n\PhpMessageSource',
+                //'basePath' => '@app/messages',
+                //'sourceLanguage' => 'en',
+                'fileMap' => [
+                    'app' => 'app.php',
+                    'app/error' => 'error.php',
+                ],
+            ],
+        ],
+    ],
+    'urlManager' => [
+            'class' => 'codemix\localeurls\UrlManager',
+
+            // List all supported languages here
+            // Make sure, you include your app's default language.
+            'languages' => [ 'en', 'de', 'es-*', 'ru'],
+        ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
